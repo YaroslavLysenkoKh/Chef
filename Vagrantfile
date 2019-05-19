@@ -15,12 +15,12 @@ Vagrant.configure('2') do |config|
 
       if host[:netint] == 1
         node.vm.network :public_network, bridge: 'Intel(R) Ethernet Connection (2) I219-V'
-    #    node.vm.provision 'shell', path: ''
+        node.vm.provision 'shell', path: 'centOS_instance.sh'
       end
 
       if host[:netint] == 2
         node.vm.network :public_network, bridge: 'Intel(R) Ethernet Connection (2) I219-V'
-    #    node.vm.provision 'shell', path: ''
+        node.vm.provision 'shell', path: 'ubuntu_instance.sh'
       end
     end
     config.vm.synced_folder '.', '/vagrant', type: 'virtualbox'
