@@ -1,6 +1,6 @@
 hosts = [
-  { name: 'chef-server',   box: 'centos/7',	        mem: 2048, 	netint: 1 },
-  { name: 'chef-node',   box: 'ubuntu/xenial64',	mem: 2048,	netint: 2 },
+  { name: 'chef-LAMP',   box: 'centos/7',	        mem: 1024, 	netint: 1 },
+  { name: 'chef-bd',   box: 'ubuntu/xenial64',	mem: 1024,	netint: 2 },
 ]
 
 
