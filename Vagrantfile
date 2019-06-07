@@ -1,6 +1,6 @@
 hosts = [
   { name: 'chef-LAMP',   box: 'centos/7',	        mem: 1024, 	netint: 1 },
-  { name: 'chef-bd',   box: 'ubuntu/xenial64',	mem: 1024,	netint: 2 },
+  { name: 'chef-bd',     box: 'centos/7',	        mem: 1024,	netint: 2 },
 ]
 
 
@@ -14,13 +14,13 @@ Vagrant.configure('2') do |config|
       end
 
       if host[:netint] == 1
-        node.vm.network :public_network, bridge: 'Intel(R) Ethernet Connection (2) I219-V'
+        node.vm.network :public_network, bridge: 'Realtek PCIe GBE Family Controller'
         node.vm.provision 'shell', path: 'centOS_instance.sh'
       end
 
       if host[:netint] == 2
-        node.vm.network :public_network, bridge: 'Intel(R) Ethernet Connection (2) I219-V'
-        node.vm.provision 'shell', path: 'ubuntu_instance.sh'
+        node.vm.network :public_network, bridge: 'Realtek PCIe GBE Family Controller'
+        node.vm.provision 'shell', path: 'centOS_instance.sh'
       end
     end
     config.vm.synced_folder '.', '/vagrant', type: 'virtualbox'
